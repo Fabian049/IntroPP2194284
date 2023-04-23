@@ -1,4 +1,4 @@
-# Repositorio talleres / Computación Paralela
+# Repositorio Talleres / Computación Paralela
 
 Este es el repositorio de trabajo de la materia de Computación Paralela
 
