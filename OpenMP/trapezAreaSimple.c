@@ -1,3 +1,8 @@
+/*********************************
+ ********TRAPEZOIDAL RULE*********
+  2017 (c) Manas Sharma - https://bragitoff.com
+  2023 (modified) C. Barrios       
+ ********************************/
 #include<stdio.h>
 #include<math.h>
  
