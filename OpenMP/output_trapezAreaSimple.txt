@@ -1,0 +1,5 @@
+
+Enter the no. of sub-intervals: 
+Enter the initial limit: 
+Enter the final limit: 
+The integral is: 21.125000
