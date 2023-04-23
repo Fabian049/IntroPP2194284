@@ -27,7 +27,7 @@ int main(){
   scanf("%lf",&b);
   /*Begin Trapezoidal Method: */
   h=fabs(b-a)/n;
-  /*OpenMP */
+  /*OpenMP  Use the OpenMP directive #pragma omp parallel to execute the loop for*/
   #pragma omp parallel for private(x) reduction(+:sum)
   for(i=1;i<n;i++){
     x=a+i*h;
