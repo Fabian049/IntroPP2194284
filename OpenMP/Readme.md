@@ -4,5 +4,10 @@ En esta carpeta se encuentran los archivos requeridos en el taller:
 El codigo en C original , su version paralelizada con openMP el archivo ejecutable, un txt del output y el SBACH
 
 Modificaciones del codigo:
-Se puede aplicar la paralelización utilizando la directiva de OpenMP #pragma omp parallel for para ejecutar el bucle for.
-La directiva incluye dos cláusulas importantes: private y reduction. La cláusula private especifica que cada hilo tendrá su propia copia de la variable x, evitando así conflictos entre hilos. La cláusula reduction especifica que la variable sum será sumada por todos los hilos y almacenada en una sola variable al final de la ejecución del bucle.
+Se agregaron las llamadas a las funciones MPI_Init, MPI_Comm_size y MPI_Comm_rank para inicializar MPI y obtener el número total de procesos y el identificador del proceso actual.
+Se utilizó la condición if (myid == 0) para solicitar al usuario la entrada necesaria solo en el proceso con identificador 0.
+Se utilizó la función MPI_Bcast para transmitir los valores de n, a y b desde el proceso con identificador 0 a todos los demás procesos.
+Se modificó el bucle for para dividir el trabajo entre los procesos. Cada proceso calcula la suma de las evaluaciones de la función f(x) en subintervalos específicos.
+Se utilizó la función MPI_Reduce para sumar las integrales calculadas por cada proceso y almacenar el resultado total en la variable total del proceso con identificador 0.
+Se agregó la llamada a MPI_Finalize para finalizar MPI antes de que el programa termine.
+
